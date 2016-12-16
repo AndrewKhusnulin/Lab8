@@ -21,7 +21,7 @@ int WINAPI WinMain(HINSTANCE hIns, HINSTANCE hPrevIns, LPSTR arg, int WinMode)
 	if (!RegisterClassEx(&wcl)) return 0;
 	hwnd = CreateWindow(
 		WinName,
-		"Title",
+		"Ellipse",
 		WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT,
 		CW_USEDEFAULT,
@@ -105,8 +105,8 @@ LRESULT CALLBACK WinFun(HWND hwnd, UINT message,
 		p = pFirst;
 		while (p)
 		{
-			SelectObject(hdc, penW);
-			SelectObject(hdc, brW);
+			SelectObject(hdc, penB);
+			SelectObject(hdc, brB);
 			Ellipse(hdc, p->E.x1, p->E.y1, p->E.x2, p->E.y2);
 			p = p->pNext;
 		}
